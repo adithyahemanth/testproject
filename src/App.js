@@ -8,7 +8,7 @@ const App =  () =>{
     <React.Fragment>
     
     <Router>
-      <Route path="/interndemo">
+      <Route path="/interndemo" exact>
       <Dashboard/>
       </Route>
     </Router>
