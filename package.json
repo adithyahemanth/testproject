@@ -27,7 +27,7 @@
     "styled-components": "^5.2.3",
     "web-vitals": "^1.1.1"
   },
-  "homepage": "https:///adithyahemanth.github.io/interndemo/",
+  "homepage": "https://adithyahemanth.github.io/interndemo/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
