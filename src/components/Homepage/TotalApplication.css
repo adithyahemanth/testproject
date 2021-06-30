@@ -1,0 +1,23 @@
+  .chart-1{
+      width: 150px;
+      text-align: center;
+      padding-left: 40px;
+  }
+  .Totalappln{
+font-size: 10px;
+}
+
+  .progress{
+    padding-left:40px;  
+    position:relative;
+    left:250px;
+    bottom:150px;
+    width: 100px
+  }
+
+  .horidrop{
+    position:relative;
+    left:350px;
+    bottom:150px;
+}
+  

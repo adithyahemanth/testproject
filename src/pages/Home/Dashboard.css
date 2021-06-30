@@ -1,0 +1,94 @@
+.dropbtn {
+    color: white;
+    align-items: left;
+    font-size: 16px;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    top: 0px;
+    right: 0px;
+}
+
+  .dropbtn img {
+    top: 0px;
+    right: 0px;
+    width:10px;
+    height:20px
+  }
+  
+  .dropdown {
+    position: absolute;
+    margin-top:10px;
+    padding-right:40px;
+    top: 0px;
+    right: 0px;
+
+}
+.dropdown :hover{
+opacity: 0.5;    
+}
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:black;
+    align-self: center;
+    min-width: 160px;
+    float :right;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    padding-right:20px;
+   padding-left:20px;
+   text-decoration: none;
+    display: block;
+  }
+  .item-2{
+    color:whitesmoke;
+    padding-top:50px;
+      padding-left:50px;
+
+  }
+  .heading{
+      font-size:25px;
+  }
+  .time{
+      font-size:15px;
+  }
+  .dropdown-content a:hover {background-color:white;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+.btn1{
+    position:absolute;
+    right:400px;
+    top:70px;
+    background-color: rgb(10, 192, 228);
+    border: 1px solid  rgb(10, 192, 228);
+    color:white;
+    width:70px;
+    height:30px
+}
+.lab1{
+    color:gray
+}
+.inp1{
+    background-color: black;
+    border:1px solid grey;
+    border-radius: 25px;
+    
+    outline: none;
+    color:rgb(215, 185, 185);
+    padding:4px;
+    padding-left:10px;
+    position:absolute;
+    right:150px;
+    top:73px;
+ }
+
+ .components{
+  display:inline
+}
