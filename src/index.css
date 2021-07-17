@@ -7,8 +7,10 @@ body {
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-  background-size: cover;
-}
+  overflow-x: hidden;
+  max-width: 100%;
+ 
+ }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -16,5 +18,4 @@ code {
   }
 main{
   margin-left:40px ;
-  background-color: black;
-}
+ }

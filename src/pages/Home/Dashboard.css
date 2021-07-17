@@ -24,14 +24,14 @@
     right: 0px;
 
 }
-.dropdown :hover{
+.dropdown img:hover{
 opacity: 0.5;    
 }
   
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color:black;
+    background-color:white;
     align-self: center;
     min-width: 160px;
     float :right;
@@ -47,48 +47,80 @@ opacity: 0.5;
    text-decoration: none;
     display: block;
   }
-  .item-2{
-    color:whitesmoke;
-    padding-top:50px;
-      padding-left:50px;
-
+  
+  .dropdown-content a:hover {
+    background-color:rgb(153, 138, 138);
+    color:white
   }
-  .heading{
-      font-size:25px;
-  }
-  .time{
-      font-size:15px;
-  }
-  .dropdown-content a:hover {background-color:white;}
   
   .dropdown:hover .dropdown-content {display: block;}
 .btn1{
     position:absolute;
     right:400px;
     top:70px;
-    background-color: rgb(10, 192, 228);
+    padding-top:7px;
+    padding-bottom:2px;
     border: 1px solid  rgb(10, 192, 228);
     color:white;
-    width:70px;
-    height:30px
+    width:68px;
+    height:30px;
+    background-color: dodgerblue;
 }
 .lab1{
     color:gray
 }
 .inp1{
-    background-color: black;
     border:1px solid grey;
     border-radius: 25px;
-    
     outline: none;
+    width:200px;
     color:rgb(215, 185, 185);
     padding:4px;
     padding-left:10px;
     position:absolute;
-    right:150px;
+    right:120px;
     top:73px;
+    background-color: black;
  }
 
  .components{
   display:inline
+}
+
+.tab {
+  margin:px;
+  background: black;
+  overflow: hidden;
+ 
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background: black;
+  color: aliceblue;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  color:black
+}
+
+.tab button:active {
+  background-color:black;
+  color:white
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
 }

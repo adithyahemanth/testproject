@@ -1,17 +1,32 @@
 import React from 'react'
 import './App.css';
 import { BrowserRouter as Router , Route } from 'react-router-dom';
+
 import Dashboard from './pages/Home/Dashboard';
-import SideDrawer from './components/Shared/navigation/SideDrawer'
+import MiniDrawer from './components/Shared/navigation/SideDrawer'
+import Third from './pages/Home/Third';
+import Fifth from './pages/Home/Fifth';
+import Magic from './pages/Home/Magic';
+
 const App =  () =>{
   return (
     <React.Fragment>
-    
+      
     <Router>
-      <Route path="/interndemo" exact>
+    <MiniDrawer/>
+      <Route path="/" exact>
       <Dashboard/>
       </Route>
-    </Router>
+      <Route path="/third" exact>
+      <Third/>
+      </Route>
+      <Route path="/fifth" exact>
+      <Fifth/>
+      </Route>
+      <Route path="/magic" exact>
+      <Magic/>
+      </Route>
+      </Router>
     </React.Fragment>
           );
 }

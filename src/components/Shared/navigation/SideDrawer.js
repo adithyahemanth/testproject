@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
+    
     }),
     backgroundColor:'black',
-      
-},
+  },
   appBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
     
-    backgroundColor:'black',
   },
   menuButton: {
     marginRight: 36,
@@ -56,7 +55,6 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
     whiteSpace: 'nowrap',
     backgroundColor:'black',
-    
   },
   drawerOpen: {
     width: drawerWidth,
@@ -64,8 +62,6 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    backgroundColor:'black',
-    color:'white' 
 },
   drawerClose: {
     transition: theme.transitions.create('width', {
@@ -78,7 +74,6 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(9) + 1,
     },
     backgroundColor:'black',
-    color:'white'
   },
   toolbar: {
     display: 'flex',
@@ -91,11 +86,10 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    backgroundColor:'black',
   },
 }));
 
-export default function MiniDrawer() {
+export default function MiniDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -110,16 +104,14 @@ export default function MiniDrawer() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-        background='black'
-      >
+       >
         <Toolbar>
-          <IconButton
+          {/*<IconButton
             color='inherit'
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -128,23 +120,19 @@ export default function MiniDrawer() {
               [classes.hide]: open,
             })}
           >
-              <p style={{fontSize: '2px',color:'white'}}>A</p>
-          </IconButton>
+                 <MenuIcon/>
+          </IconButton>*/}
           <Typography>
-          <div class="dropdown">
-<img class="dropbtn" src="https://www.w3schools.com/howto/img_avatar.png"/>  
- <l style={{color:'white'}}>Kandala L N Adithya Hemanth</l>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-  </div>
+          <div class="tab">
+          <Link to='/third'> <button class="tablinks" onClick={props.onClickthird} >thirds</button></Link>
+          <Link to='/fifth'> <button class="tablinks" onClick={props.onClickthird}>fifths</button></Link>
+          <Link to='/magic'><button class="tablinks" onClick={props.onClickthird}>magic</button></Link>
+</div>
 
-          </Typography>
+      </Typography>
         </Toolbar>
      </AppBar>
-      <Drawer
+     { /*<Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
           [classes.drawerOpen]: open,
@@ -159,20 +147,15 @@ export default function MiniDrawer() {
       >
         <div className={classes.toolbar}>
           <IconButton onClick={handleDrawerClose}>
-    {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon style={{color: 'white'}}/>}
+    {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon style={{color: 'black'}}/>}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <Link to="/"><InboxIcon style={{color: 'white'}} /> </Link>: <MailIcon style={{color: 'white'}}/>}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          
         </List>
         <Divider />
-      </Drawer>
+      </Drawer>*/}
       </div>
       )
       }
