@@ -1,7 +1,4 @@
-import React,{useEffect, useState} from 'react'
-import axios from 'axios'
-
-import MiniDrawer from '../../components/Shared/navigation/SideDrawer'
+import React from 'react'
 
 import './Dashboard.css'
 

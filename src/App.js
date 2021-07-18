@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { BrowserRouter as Router , Route } from 'react-router-dom';
+import { BrowserRouter as Router , Route,Switch } from 'react-router-dom';
 
 import Dashboard from './pages/Home/Dashboard';
 import MiniDrawer from './components/Shared/navigation/SideDrawer'
@@ -14,7 +14,8 @@ const App =  () =>{
       
     <Router>
     <MiniDrawer/>
-      <Route path="/" exact>
+      <Switch>
+        <Route path="/testproject" exact>
       <Dashboard/>
       </Route>
       <Route path="/third" exact>
@@ -26,6 +27,7 @@ const App =  () =>{
       <Route path="/magic" exact>
       <Magic/>
       </Route>
+      </Switch>
       </Router>
     </React.Fragment>
           );

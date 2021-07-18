@@ -9,7 +9,8 @@ function Result(props) {
     const [intval,setinpval]=useState('')
     const [cat1,setcat2]=useState({val:[],loader:true})
     const [nothidden,setnothidden]=useState([])
-//const nothidden=[]
+
+
     const onType = (event)=>{
 
         setinpval(event.target.value)
@@ -18,7 +19,7 @@ function Result(props) {
     useEffect(()=>{
      setcat2({val:cat2})
     },[cat2])
-     
+
 
 const resethandler=() =>{
     setnothidden([])
@@ -26,6 +27,16 @@ const resethandler=() =>{
 }
 
 
+const Unshowhandler = (index)=>{
+    
+    
+        console.log(index)
+    nothidden.splice(index,1)
+    console.log(nothidden)
+    setnothidden([...nothidden])
+    
+}
+console.log(nothidden)
  return (
         <div className="cat1">
 
@@ -45,31 +56,36 @@ const resethandler=() =>{
 {  
     cat1.val.map((cat,idx) => {
             
-                      if(intval===''){ return (
+                      if(intval===''){ 
+                        
+                        return (
     
                 <React.Fragment key={idx}>
                 
                 <tr key={idx}>
 
                 
-{nothidden.indexOf(idx)==-1    &&    <td><p  style={{color:'white'}}>{cat.id}</p></td>} 
+{nothidden.indexOf(idx)===-1  && <td><p  style={{color:'white'}}>{cat.id}</p></td>} 
 
-{nothidden.indexOf(idx)==-1    &&    <td><p  style={{color:'white'}}>{cat.category}</p></td>    }           
-{nothidden.indexOf(idx)==-1    &&            <td><DeleteIcon onClick={()=>{
-                var ages=  cat1.val.filter((cat1)=>{return(cat1.id != cat.id)})                  
+{nothidden.indexOf(idx)===-1    && <td><p  style={{color:'white'}}>{cat.category}</p></td>}           
+{nothidden.indexOf(idx)===-1     &&<td><DeleteIcon onClick={()=>{
+                var ages=  cat1.val.filter((cat1)=>{return(cat1.id !== cat.id)})                  
                   setcat2({val:ages})
                 }} /></td>}
-                <td><VisibilityOffIcon onClick={()=>{
+{nothidden.indexOf(idx)===-1     &&   <td><VisibilityOffIcon onClick={()=>{
                             console.log(idx)
+                            console.log(nothidden)
+                         if(nothidden.indexOf(idx)===-1){
                             setnothidden(hidden=>[...nothidden,idx])
-                        }}/></td>
+                        }
+                        
+                        }}/></td>}
                 <td><VisibilityIcon onClick={()=>{
             let index=nothidden.indexOf(idx)
-            console.log(index)
-            nothidden.splice(index,1)
-            console.log(nothidden)
-            setnothidden(nothidden)
-            
+            //  setindex(index)
+            if(index>-1){
+              Unshowhandler(index)
+            }           
         }}/></td>        
                 </tr>
                 
@@ -77,7 +93,7 @@ const resethandler=() =>{
                 )
             }
            else if(intval==cat.id){
-            
+            console.log(nothidden)
                 return (
         
                     <React.Fragment key={idx}>
@@ -85,23 +101,22 @@ const resethandler=() =>{
                     <tr key={idx}>
     
                     
-    {nothidden.indexOf(idx)==-1    &&    <td><p  style={{color:'white'}}>{cat.id}</p></td>} 
+    {nothidden.indexOf(idx)===-1    &&    <td><p  style={{color:'white'}}>{cat.id}</p></td>} 
     
-    {nothidden.indexOf(idx)==-1    &&    <td><p  style={{color:'white'}}>{cat.category}</p></td>    }           
-    {nothidden.indexOf(idx)==-1    &&            <td><DeleteIcon onClick={()=>{
-                    var ages=  cat1.val.filter((cat1)=>{return(cat1.id != cat.id)})                  
+    {nothidden.indexOf(idx)===-1    &&    <td><p  style={{color:'white'}}>{cat.category}</p></td>    }           
+    {nothidden.indexOf(idx)===-1    &&            <td><DeleteIcon onClick={()=>{
+                    var ages=  cat1.val.filter((cat1)=>{return(cat1.id !== cat.id)})                  
                       setcat2({val:ages})
                     }} /></td>}
-                    <td><VisibilityOffIcon onClick={()=>{
+    {nothidden.indexOf(idx)===-1    &&    <td><VisibilityOffIcon onClick={()=>{
                                 console.log(idx)
                                 setnothidden(hidden=>[...nothidden,idx])
-                            }}/></td>
+                            }}/></td>}
                     <td><VisibilityIcon onClick={()=>{
                 let index=nothidden.indexOf(idx)
-                console.log(index)
-                nothidden.splice(index,1)
-                console.log(nothidden)
-                setnothidden(nothidden)
+                if(index>-1){
+                    Unshowhandler(index)
+                  }   
                 
             }}/></td>        
                     </tr>
