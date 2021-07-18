@@ -14,7 +14,7 @@ const App =  () =>{
       
     <Router>
     <MiniDrawer/>
-      <HashRouter>
+      <Switch>
         <Route path="/testproject" exact>
       <Dashboard/>
       </Route>
@@ -27,7 +27,7 @@ const App =  () =>{
       <Route path="/magic" exact>
       <Magic/>
       </Route>
-      </HashRouter>
+      </Switch>
       </Router>
     </React.Fragment>
           );
