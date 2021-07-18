@@ -5,11 +5,17 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-const drawerWidth = 210;
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+import './SideDrawer.css'
 
+const drawerWidth = 210;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+  },
+  Tabs:{
+color:'white'
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -79,11 +85,13 @@ export default function MiniDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  const [value,setvalue]=React.useState(0)
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
+const onClickthird = (index) => {
+setvalue(index)
+}
   const handleDrawerClose = () => {
     setOpen(false);
   };
@@ -110,10 +118,10 @@ export default function MiniDrawer(props) {
           </IconButton>*/}
           <Typography>
           <div class="tab">
-          <Link to='/third'> <button class="tablinks" onClick={props.onClickthird} >thirds</button></Link>
-          <Link to='/fifth'> <button class="tablinks" onClick={props.onClickthird}>fifths</button></Link>
-          <Link to='/magic'><button class="tablinks" onClick={props.onClickthird}>magic</button></Link>
-</div>
+          <Link to='/third'> <button className={value==1 ?"active" :"tablinks"} onClick={()=>onClickthird(1)} >thirds</button></Link>
+          <Link to='/fifth'> <button className={value==2?"active":"tablinks"} onClick={()=>onClickthird(2)}>fifths</button></Link>
+          <Link to='/magic'><button className={value==3?"active":"tablinks"} onClick={()=>onClickthird(3)}>magic</button></Link>
+        </div>
 
       </Typography>
         </Toolbar>

@@ -113,7 +113,7 @@ opacity: 0.5;
   color:black
 }
 
-.tab button:active {
+.tab button.active {
   background-color:white;
   color:black
 }
