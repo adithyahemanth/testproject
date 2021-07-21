@@ -30,13 +30,10 @@ const resethandler=() =>{
 const Unshowhandler = (index)=>{
     
     
-        console.log(index)
     nothidden.splice(index,1)
-    console.log(nothidden)
     setnothidden([...nothidden])
     
 }
-console.log(nothidden)
  return (
         <div className="cat1">
 
@@ -50,7 +47,7 @@ console.log(nothidden)
            <th>category</th>
         <th><button onClick={resethandler}>reset</button></th>
     </tr>
-
+</table>
 
 
 {  
@@ -61,9 +58,9 @@ console.log(nothidden)
                         return (
     
                 <React.Fragment key={idx}>
+<table>
                 
                 <tr key={idx}>
-
                 
 {nothidden.indexOf(idx)===-1  && <td><p  style={{color:'white'}}>{cat.id}</p></td>} 
 
@@ -86,18 +83,22 @@ console.log(nothidden)
             if(index>-1){
               Unshowhandler(index)
             }           
-        }}/></td>        
+        }
+        }
+        />
+        </td>        
                 </tr>
-                
+                </table>                
                 </React.Fragment>
                 )
             }
+
            else if(intval==cat.id){
             console.log(nothidden)
                 return (
         
                     <React.Fragment key={idx}>
-                
+                <table>
                     <tr key={idx}>
     
                     
@@ -120,6 +121,7 @@ console.log(nothidden)
                 
             }}/></td>        
                     </tr>
+                    </table>
                     
                     </React.Fragment>
             )
@@ -129,7 +131,7 @@ console.log(nothidden)
     
     }
     
-</table>
+
         </div>
     )
 

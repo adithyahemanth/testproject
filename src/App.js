@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import { BrowserRouter as Router , Route,Switch,HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router , Route,Switch} from 'react-router-dom';
 
 import Dashboard from './pages/Home/Dashboard';
 import MiniDrawer from './components/Shared/navigation/SideDrawer'

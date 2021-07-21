@@ -1,12 +1,14 @@
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 import Result from '../../components/Fetch/Result'
-import axios from 'axios'
+
+import FetchDetails from '../../components/Fetch/FetchDetails'
+
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 
 function Fifth() {
     const cat1=[]
-    const [loader,setloader]=useState(false)
+/*    const [loader,setloader]=useState(false)
     const [values,setvalue]=useState([])
     //const val = FetchDetails()
     const fetchdetails = async () =>{
@@ -20,21 +22,26 @@ function Fifth() {
     fetchdetails()
   },[])
    
-    
+  */  
     //const val = FetchDetails()
     
     //const values=val.val
+   // const [values,loader]=FetchDetails() 
+   // console.log(values,loader)
+
     
-    values.map(values=>{
+    /*values.map(values=>{
       if(values.id%5===0 ){
         values.catergory='thirds'
         cat1.push({id:values.id,category:values.catergory})
-      }})
+      }})*/
      
  
      return(
        <div>
-{  loader ? <Result  cat1={cat1} />  : <CircularProgress style={{color:'white',padding:'300px'}}/>}
+{//{  loader ? <Result  cat1={cat1} />  : <CircularProgress style={{color:'white',padding:'300px'}}/>}
+} 
+     <FetchDetails category={'fifths'}/>
     </div>    
     )
      }
