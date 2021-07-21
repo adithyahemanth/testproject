@@ -34,10 +34,12 @@ const Unshowhandler = (index)=>{
     setnothidden([...nothidden])
     
 }
+
  return (
-        <div className="cat1">
 
+<div className="cat1">
 
+<div>
     <center> 
        <input type="text" onChange={onType}/>
     </center>
@@ -122,7 +124,7 @@ const Unshowhandler = (index)=>{
             }}/></td>        
                     </tr>
                     </table>
-                    
+
                     </React.Fragment>
             )
        
@@ -133,8 +135,8 @@ const Unshowhandler = (index)=>{
     
 
         </div>
-    )
-
+    </div>
+ )
 }
 
 export default Result

@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import axios from 'axios'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import Result from './Result'
 
@@ -19,7 +20,7 @@ function FetchDetails(props) {
      setvalue(result.data) 
     })
     setloader(true)
-  },[loader])
+  },[])
 
    value.map(value=>{
         if(value.id%3===0){
@@ -44,14 +45,13 @@ function FetchDetails(props) {
 
 
       if(props.category=='third'){
-        return <Result cat1={cat1}/>
+        return (<div>{loader ? <Result cat1={cat1} />:<CircularProgress style={{color:'white',padding:'200px'}}/>}</div>)
       }
       else if(props.category=='fifths'){
-        return <Result cat1={cat2}/>
+        return (<div>{loader ? <Result cat1={cat2}/>:<CircularProgress style={{color:'white',padding:'200px'}}/>}</div>)
       }
       else if(props.category=='magic'){
-        return <Result cat1={cat3}/>
-      }
+        return (<div>{loader ? <Result cat1={cat3}/>:<CircularProgress style={{color:'white',padding:'200px'}}/>}</div>)      }
 }
 
 export default FetchDetails
